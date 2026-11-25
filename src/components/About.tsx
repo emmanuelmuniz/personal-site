@@ -14,9 +14,9 @@ export function About() {
       mm.add("(prefers-reduced-motion: no-preference)", () => {
         gsap.fromTo(
           photoRef.current,
-          { clipPath: "inset(100% 0 0 0)" },
+          { clipPath: "inset(100% 0 0 0 round 1rem)" },
           {
-            clipPath: "inset(0% 0 0 0)",
+            clipPath: "inset(0% 0 0 0 round 1rem)",
             duration: 1.4,
             ease: "power4.inOut",
             scrollTrigger: { trigger: photoRef.current, start: "top 80%", once: true },
@@ -52,11 +52,11 @@ export function About() {
         <div className="md:col-span-4">
           <div
             ref={photoRef}
-            className="duotone aspect-[4/5] w-full max-w-[26rem]"
-            style={{ clipPath: "inset(0 0 0 0)" }}
+            className="photo aspect-square w-full max-w-[15rem] rounded-2xl md:max-w-[17rem]"
+            style={{ clipPath: "inset(0 0 0 0 round 1rem)" }}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={photo.src} alt={photo.alt} loading="lazy" style={{ transform: "scale(1.12)" }} />
+            <img src={photo.src} alt={photo.alt} loading="lazy" style={{ transform: "scale(1.08)" }} />
           </div>
         </div>
 
