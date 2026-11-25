@@ -18,7 +18,7 @@ export function Timeline() {
             data-split
             className="display text-[1.75rem] font-medium leading-[1.15] tracking-tight md:col-span-7 md:col-start-6 md:text-[2.1rem]"
           >
-            Consultoras, una telco, producto, freelance. Seis años, en orden inverso.
+            Consultoría, telecomunicaciones, producto y proyectos independientes. Seis años, del más reciente al más antiguo.
           </p>
         </Reveal>
 

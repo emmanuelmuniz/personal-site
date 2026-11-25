@@ -18,7 +18,7 @@ export function Tools() {
             data-split
             className="display text-[1.75rem] font-medium leading-[1.15] tracking-tight md:col-span-7 md:col-start-6 md:text-[2.1rem]"
           >
-            Cosas chicas que uso y dejo abiertas. Cada una vive en su propio repo, corre en el navegador y se puede clonar.
+            Herramientas de código abierto y alcance acotado. Cada una tiene su propio repositorio, se ejecuta en el navegador y puede clonarse.
           </p>
         </Reveal>
 
@@ -31,7 +31,7 @@ export function Tools() {
             >
               <div className="md:col-span-7">
                 <p data-reveal className="label">
-                  {t.year} · {t.status === "live" ? "En vivo" : "Próximamente"}
+                  {t.year} · {t.status === "live" ? "Publicada" : "En desarrollo"}
                 </p>
                 <h3
                   data-split
@@ -47,11 +47,11 @@ export function Tools() {
                 </p>
                 <div data-reveal className="mt-10 flex flex-wrap gap-3">
                   <a href={t.url} target="_blank" rel="noreferrer" className="btn btn-primary">
-                    Probar
+                    Abrir
                     <span aria-hidden>→</span>
                   </a>
                   <a href={t.repo} target="_blank" rel="noreferrer" className="btn">
-                    Código en GitHub
+                    Repositorio
                   </a>
                 </div>
               </div>

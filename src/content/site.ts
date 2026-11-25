@@ -10,12 +10,12 @@ export const site = {
   location: "Mendoza, AR",
   timezone: "America/Argentina/Mendoza",
   year: "2026",
-  heroLine: "Llevo modelos de lenguaje a productos reales.",
+  heroLine: "Integro modelos de lenguaje en sistemas de producción.",
   tagline:
-    "Seis años construyendo aplicaciones web, móviles y sistemas para empresas. Últimamente, llevando modelos de lenguaje a producción: agentes de voz, clasificación de documentos, evaluación de modelos.",
+    "Seis años de desarrollo de software: backends en Java y Node.js, interfaces en React y Next.js, infraestructura en AWS y GCP. En los últimos dos, aplicación de LLMs a productos en uso: agentes de voz, clasificación de documentos y evaluación de modelos.",
   intro: [
-    "Soy Licenciado en Informática y Desarrollo de Software. Trabajé en equipos y contextos muy distintos: consultoras, una telco, una empresa de producto, proyectos freelance. Eso me dio una mirada completa del stack, del backend en Java o Node hasta la interfaz en React.",
-    "Lo que más me interesa hoy es el punto donde la IA se vuelve software real: integrar modelos como OpenAI y Gemini en productos que la gente usa todos los días, y entender cómo se evalúan y entrenan. Me importa que los sistemas escalen, sean seguros y resuelvan algo concreto.",
+    "Licenciado en Informática y Desarrollo de Software por la Universidad del Aconcagua. Trabajé en consultoras, en una empresa de telecomunicaciones, en una empresa de producto y en proyectos independientes, con equipos de distinto tamaño y madurez técnica. Esa trayectoria cubre el ciclo completo de un sistema: diseño de APIs, modelado de datos, interfaz, despliegue y operación.",
+    "Mi foco actual es la integración de modelos de lenguaje en software de producción: orquestación de agentes, pipelines de clasificación y extracción, y evaluación sistemática de modelos. Aplico a estos componentes los mismos criterios que a cualquier otro: deben ser medibles, seguros y mantenibles.",
   ],
   email: "munizadaroemmanuel@gmail.com",
   links: [
@@ -24,7 +24,7 @@ export const site = {
   ],
 } as const;
 
-/** Herramientas chicas, abiertas y usables. Cada una vive en su propio repo. */
+/** Herramientas de código abierto. Cada una tiene su propio repositorio. */
 export type Tool = {
   name: string;
   tagline: string;
@@ -39,9 +39,9 @@ export type Tool = {
 export const tools: Tool[] = [
   {
     name: "LLM Costs",
-    tagline: "¿Cuánto cuesta ese prompt?",
+    tagline: "Costo por llamada, por modelo.",
     description:
-      "Pegás un texto o escribís tokens, elegís modelos y ves el costo por llamada, por día y por mes. Los precios se actualizan en vivo desde el catálogo público de OpenRouter, sobre un snapshot verificado contra cada proveedor. Corre entero en el navegador: sin keys, sin cuentas, sin tracking.",
+      "Calcula el costo por llamada, por día y por mes de un prompt, a partir de un texto o de una cantidad de tokens, para los modelos seleccionados. Los precios se actualizan desde el catálogo público de OpenRouter sobre un snapshot verificado contra cada proveedor. Se ejecuta íntegramente en el navegador: sin claves, sin cuentas y sin seguimiento.",
     stack: ["React", "TypeScript", "Vite", "Tailwind"],
     year: "2026",
     url: "https://llm-costs-app.vercel.app",
@@ -51,7 +51,7 @@ export const tools: Tool[] = [
 ];
 
 /** Lo que viene después. Una línea, sin promesas grandes. */
-export const toolsNext = "En camino: un playground de salida estructurada y un visor de conversaciones de agentes.";
+export const toolsNext = "En desarrollo: un entorno de pruebas para salida estructurada y un visor de trazas de agentes.";
 
 export type Experience = {
   company: string;
@@ -74,7 +74,7 @@ export const experience: Experience[] = [
     end: "Presente",
     mode: "Remoto · contratista",
     summary:
-      "Soporte a pipelines de entrenamiento de IA: evaluación de respuestas, revisión de razonamiento técnico y aporte de conocimiento de dominio.",
+      "Evaluación de respuestas de modelos, revisión de razonamiento técnico y aporte de conocimiento de dominio para pipelines de entrenamiento de IA.",
     stack: ["Evaluación de modelos", "Ingeniería de software"],
   },
   {
@@ -84,7 +84,7 @@ export const experience: Experience[] = [
     end: "2026",
     mode: "Remoto · contratista",
     summary:
-      "Evaluación de LLMs en tareas de código. Redacción de soluciones de referencia, casos de prueba y rúbricas.",
+      "Evaluación de modelos de lenguaje en tareas de programación: soluciones de referencia, casos de prueba y rúbricas de calificación.",
     stack: ["Java", "TypeScript", "Python"],
   },
   {
@@ -93,10 +93,10 @@ export const experience: Experience[] = [
     start: "2025",
     end: "2026",
     mode: "Remoto",
-    summary: "Equipo de producto. Backend en Java y Spring Boot, herramientas internas en Next.js.",
+    summary: "Equipo de producto. Servicios backend en Java y Spring Boot; herramientas internas en Next.js.",
     highlights: [
-      "Gemini en producción: chatbots, clasificación automática de documentos y generación de instrucciones para formularios de impuestos, sobre servicios Java con Spring Boot.",
-      "Herramientas internas con Next.js y React, bases MySQL y despliegues en AWS.",
+      "Integración de Gemini en producción: asistentes conversacionales, clasificación automática de documentos y generación de instrucciones para formularios impositivos, sobre servicios Java con Spring Boot.",
+      "Herramientas internas en Next.js y React, con MySQL y despliegues en AWS.",
     ],
     stack: ["Java", "Spring Boot", "Next.js", "MySQL", "AWS"],
   },
@@ -106,10 +106,10 @@ export const experience: Experience[] = [
     start: "2024",
     end: "2025",
     mode: "Híbrido",
-    summary: "Telco. Sistemas con NestJS en microservicios y arquitectura hexagonal sobre PostgreSQL y AWS.",
+    summary: "Empresa de telecomunicaciones. Microservicios en NestJS con arquitectura hexagonal, sobre PostgreSQL y AWS.",
     highlights: [
-      "Agentes de voz con OpenAI para atender y realizar llamadas en tiempo real, con la orquestación de la conversación y la automatización de los flujos detrás.",
-      "Mensajería por SMS, WhatsApp y email, CRM interno y gestión de catálogos y ofertas: microservicios NestJS con arquitectura hexagonal sobre PostgreSQL y AWS.",
+      "Agentes de voz con OpenAI para atención y emisión de llamadas en tiempo real, incluyendo la orquestación de la conversación y la automatización de los flujos asociados.",
+      "Mensajería por SMS, WhatsApp y correo electrónico, CRM interno y gestión de catálogos y ofertas comerciales.",
     ],
     stack: ["NestJS", "PostgreSQL", "AWS", "OpenAI"],
   },
@@ -120,7 +120,7 @@ export const experience: Experience[] = [
     end: "2024",
     mode: "Remoto",
     summary:
-      "Aplicaciones web y APIs REST para clientes. Autenticación de usuarios con MongoDB y Next.js. PostgreSQL, MongoDB y Firebase.",
+      "Aplicaciones web y APIs REST para clientes. Autenticación de usuarios y persistencia en PostgreSQL, MongoDB y Firebase.",
     stack: ["Next.js", "NestJS", "Tailwind", "MongoDB"],
   },
   {
@@ -130,7 +130,7 @@ export const experience: Experience[] = [
     end: "2023",
     mode: "Remoto",
     summary:
-      "APIs de microservicios en Java, bases de datos no relacionales, pruebas con JUnit y Mockito, servicios de Google Cloud.",
+      "APIs basadas en microservicios en Java, bases de datos no relacionales, pruebas unitarias con JUnit y Mockito, y servicios de Google Cloud.",
     stack: ["Java", "Microservicios", "GCP", "JUnit"],
   },
   {
@@ -140,7 +140,7 @@ export const experience: Experience[] = [
     end: "2021",
     mode: "Remoto",
     summary:
-      "Apps móviles con Ionic para órdenes de telecomunicaciones y cronometraje, y una plataforma web de alquileres temporarios con Angular.",
+      "Aplicaciones móviles en Ionic para gestión de órdenes de telecomunicaciones y control de tiempos, y una plataforma web de alquileres temporarios en Angular.",
     stack: ["Ionic", "Angular", "MySQL", "PostgreSQL"],
   },
 ];
@@ -160,10 +160,10 @@ export const education = {
 };
 
 export const now = {
-  title: "Ahora",
+  title: "Actualmente",
   items: [
-    "Trabajando en evaluación y entrenamiento de modelos de IA.",
-    "Profundizando en cómo llevar LLMs a producción de forma confiable.",
-    "Armando este sitio.",
+    "Evaluación y entrenamiento de modelos de IA, como contratista.",
+    "Diseño de sistemas con LLMs en producción: agentes, evaluación y control de costos.",
+    "Abierto a propuestas en equipos de producto.",
   ],
 };

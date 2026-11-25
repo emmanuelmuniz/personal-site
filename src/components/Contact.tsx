@@ -33,7 +33,7 @@ export function Contact() {
               data-split
               className="display text-[clamp(2.5rem,7vw,5.5rem)] font-semibold leading-[0.95] tracking-[-0.03em]"
             >
-              Hablemos.
+              Conversemos.
             </p>
             <div data-reveal className="mt-10">
               <CopyEmail email={site.email} />
