@@ -1,4 +1,4 @@
-import { tools, toolsNext } from "@/content/site";
+import { tools } from "@/content/site";
 import { Reveal } from "./Reveal";
 
 export function Tools() {
@@ -74,11 +74,6 @@ export function Tools() {
           ))}
         </ol>
 
-        <Reveal>
-          <p data-reveal className="mt-10 max-w-[48rem] leading-relaxed text-muted">
-            {toolsNext}
-          </p>
-        </Reveal>
       </div>
     </section>
   );

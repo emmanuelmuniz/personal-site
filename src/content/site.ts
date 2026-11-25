@@ -50,8 +50,6 @@ export const tools: Tool[] = [
   },
 ];
 
-/** Lo que viene después. Una línea, sin promesas grandes. */
-export const toolsNext = "En desarrollo: un entorno de pruebas para salida estructurada y un visor de trazas de agentes.";
 
 export type Experience = {
   company: string;
