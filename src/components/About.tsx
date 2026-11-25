@@ -52,12 +52,30 @@ export function About() {
         </div>
 
         <div className="md:col-span-4">
-          <div className="w-full max-w-[15rem] overflow-hidden rounded-2xl md:max-w-[17rem]">
-            <div ref={photoRef} className="photo aspect-square w-full" style={{ clipPath: "inset(0 0 0 0)" }}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={shared.photo.src} alt={shared.name} decoding="async" style={{ transform: "scale(1.08)" }} />
+          <figure className="relative ml-auto w-[64%] max-w-[16rem] md:ml-0 md:w-full md:max-w-[19rem]">
+            <div className="relative">
+              {/* Marco desplazado detrás del retrato, como una lámina montada. */}
+              <span
+                aria-hidden
+                className="pointer-events-none absolute inset-0 translate-x-3 translate-y-3 rounded-sm border border-accent/50 md:translate-x-4 md:translate-y-4"
+              />
+              <div className="relative w-full overflow-hidden rounded-sm">
+                <div ref={photoRef} className="photo aspect-[4/5] w-full" style={{ clipPath: "inset(0 0 0 0)" }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={shared.photo.src}
+                    alt={shared.name}
+                    decoding="async"
+                    style={{ transform: "scale(1.1)", objectPosition: "50% 18%" }}
+                  />
+                </div>
+              </div>
             </div>
-          </div>
+            <figcaption className="label mt-5 flex items-baseline justify-between gap-3 text-faint md:mt-6">
+              <span>{shared.location}</span>
+              <span>{shared.year}</span>
+            </figcaption>
+          </figure>
         </div>
 
         <div className="md:col-span-4">
