@@ -1,9 +1,12 @@
-import { tools } from "@/content/site";
+"use client";
+
+import { useContent } from "./LangProvider";
 import { Reveal } from "./Reveal";
 
 export function Tools() {
+  const { sections, toolsIntro, tools, toolLabels: L } = useContent();
   return (
-    <section id="herramientas" data-scene="tools" className="relative px-5 py-24 sm:px-8 md:py-40">
+    <section id="tools" data-scene="tools" className="relative px-5 py-24 sm:px-8 md:py-40">
       <div className="mx-auto max-w-[88rem]">
         <Reveal className="grid gap-6 md:grid-cols-12">
           <div className="md:col-span-4">
@@ -11,14 +14,14 @@ export function Tools() {
               02
             </span>
             <h2 data-reveal className="label mt-4">
-              Herramientas
+              {sections.tools}
             </h2>
           </div>
           <p
             data-split
             className="display text-[1.75rem] font-medium leading-[1.15] tracking-tight md:col-span-7 md:col-start-6 md:text-[2.1rem]"
           >
-            Herramientas de código abierto y alcance acotado. Cada una tiene su propio repositorio, se ejecuta en el navegador y puede clonarse.
+            {toolsIntro}
           </p>
         </Reveal>
 
@@ -31,7 +34,7 @@ export function Tools() {
             >
               <div className="md:col-span-7">
                 <p data-reveal className="label">
-                  {t.year} · {t.status === "live" ? "Publicada" : "En desarrollo"}
+                  {t.year} · {t.status === "live" ? L.live : L.soon}
                 </p>
                 <h3
                   data-split
@@ -47,27 +50,27 @@ export function Tools() {
                 </p>
                 <div data-reveal className="mt-10 flex flex-wrap gap-3">
                   <a href={t.url} target="_blank" rel="noreferrer" className="btn btn-primary">
-                    Abrir
+                    {L.open}
                     <span aria-hidden>→</span>
                   </a>
                   <a href={t.repo} target="_blank" rel="noreferrer" className="btn">
-                    Repositorio
+                    {L.repo}
                   </a>
                 </div>
               </div>
 
               <dl className="grid grid-cols-3 gap-6 self-end md:col-span-4 md:col-start-9 md:grid-cols-1 md:gap-5 md:pl-8 md:[border-left:1px_solid_var(--rule)]">
                 <div data-reveal>
-                  <dt className="label">Stack</dt>
+                  <dt className="label">{L.stack}</dt>
                   <dd className="mt-1.5 text-muted">{t.stack.join(" · ")}</dd>
                 </div>
                 <div data-reveal>
-                  <dt className="label">Licencia</dt>
+                  <dt className="label">{L.license}</dt>
                   <dd className="mt-1.5 text-muted">MIT</dd>
                 </div>
                 <div data-reveal>
-                  <dt className="label">Datos</dt>
-                  <dd className="mt-1.5 text-muted">Precios en vivo, snapshot semanal</dd>
+                  <dt className="label">{L.data}</dt>
+                  <dd className="mt-1.5 text-muted">{t.data}</dd>
                 </div>
               </dl>
             </Reveal>

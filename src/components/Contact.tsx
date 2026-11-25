@@ -1,10 +1,14 @@
-import { now, site } from "@/content/site";
+"use client";
+
+import { shared } from "@/content";
 import { CopyEmail } from "./CopyEmail";
+import { useContent } from "./LangProvider";
 import { Reveal } from "./Reveal";
 
 export function Contact() {
+  const { sections, now, contactHeadline, copy } = useContent();
   return (
-    <section id="contacto" data-scene="contact" className="relative px-5 pb-16 pt-24 sm:px-8 md:pt-40">
+    <section id="contact" data-scene="contact" className="relative px-5 pb-16 pt-24 sm:px-8 md:pt-40">
       <div className="mx-auto max-w-[88rem]">
         <Reveal className="grid gap-10 md:grid-cols-12">
           <div className="md:col-span-4">
@@ -12,7 +16,7 @@ export function Contact() {
               04
             </span>
             <h2 data-reveal className="label mt-4">
-              Contacto
+              {sections.contact}
             </h2>
             <div className="mt-12 hidden md:block">
               <p data-reveal className="label">
@@ -33,13 +37,13 @@ export function Contact() {
               data-split
               className="display text-[clamp(2.5rem,7vw,5.5rem)] font-semibold leading-[0.95] tracking-[-0.03em]"
             >
-              Conversemos.
+              {contactHeadline}
             </p>
             <div data-reveal className="mt-10">
-              <CopyEmail email={site.email} />
+              <CopyEmail email={shared.email} labels={copy} />
             </div>
             <ul data-reveal className="mt-10 flex flex-wrap gap-x-10 gap-y-3 border-t border-rule pt-6">
-              {site.links.map((l) => (
+              {shared.links.map((l) => (
                 <li key={l.label} className="flex items-baseline gap-3">
                   <span className="label">{l.label}</span>
                   <a href={l.href} className="link" target="_blank" rel="noreferrer">

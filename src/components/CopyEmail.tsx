@@ -2,10 +2,10 @@
 
 import { useEffect, useRef, useState } from "react";
 
-type Props = { email: string };
+type Props = { email: string; labels: { idle: string; done: string } };
 
 /** Email grande con copiado al portapapeles y feedback breve. */
-export function CopyEmail({ email }: Props) {
+export function CopyEmail({ email, labels }: Props) {
   const [copied, setCopied] = useState(false);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -40,7 +40,7 @@ export function CopyEmail({ email }: Props) {
         aria-live="polite"
         className="label cursor-pointer rounded-full border border-rule px-3 py-1.5 transition-colors hover:border-accent hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
       >
-        {copied ? "Copiado ✓" : "Copiar"}
+        {copied ? labels.done : labels.idle}
       </button>
     </div>
   );

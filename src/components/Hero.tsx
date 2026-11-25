@@ -1,11 +1,13 @@
 "use client";
 
 import { useRef } from "react";
-import { site } from "@/content/site";
 import { gsap, SplitText, useGSAP } from "@/lib/gsap";
+import { shared } from "@/content";
+import { useContent } from "./LangProvider";
 
 export function Hero() {
   const ref = useRef<HTMLElement>(null);
+  const c = useContent();
 
   useGSAP(
     () => {
@@ -35,13 +37,13 @@ export function Hero() {
   return (
     <section
       ref={ref}
-      id="inicio"
+      id="top"
       data-scene="hero"
       className="relative flex min-h-dvh flex-col justify-end px-5 pb-10 pt-28 sm:px-8 md:pb-14"
     >
       <div className="mx-auto w-full max-w-[88rem]">
         <p data-hero-fade className="label mb-6 opacity-0">
-          {site.role} · {site.location}
+          {c.role} · {shared.location}
         </p>
         <h1
           data-hero-name
@@ -60,20 +62,15 @@ export function Hero() {
             data-hero-fade
             className="text-[1.35rem] leading-[1.3] opacity-0 md:col-span-7 md:text-[1.75rem]"
           >
-            {site.heroLine}{" "}
-            <span className="text-muted">{site.tagline}</span>
+            {c.heroLine}{" "}
+            <span className="text-muted">{c.tagline}</span>
           </p>
           <ol data-hero-fade className="label flex flex-wrap gap-x-8 gap-y-4 opacity-0 md:col-span-5 md:justify-end">
-            {[
-              ["01", "#sobre-mi", "Sobre mí"],
-              ["02", "#herramientas", "Herramientas"],
-              ["03", "#experiencia", "Experiencia"],
-              ["04", "#contacto", "Contacto"],
-            ].map(([n, href, label]) => (
-              <li key={href}>
-                <a href={href} className="group flex flex-col gap-1 transition-colors hover:text-accent">
-                  <span className="text-accent">{n}</span>
-                  <span>{label}</span>
+            {c.nav.map((n, i) => (
+              <li key={n.href}>
+                <a href={n.href} className="group flex flex-col gap-1 transition-colors hover:text-accent">
+                  <span className="text-accent">{String(i + 1).padStart(2, "0")}</span>
+                  <span>{n.label}</span>
                 </a>
               </li>
             ))}

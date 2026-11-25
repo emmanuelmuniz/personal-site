@@ -1,9 +1,12 @@
-import { education, experience } from "@/content/site";
+"use client";
+
+import { useContent } from "./LangProvider";
 import { Reveal } from "./Reveal";
 
 export function Timeline() {
+  const { sections, experienceIntro, experience, present, education } = useContent();
   return (
-    <section id="experiencia" data-scene="timeline" className="relative px-5 py-24 sm:px-8 md:py-40">
+    <section id="experience" data-scene="timeline" className="relative px-5 py-24 sm:px-8 md:py-40">
       <div className="mx-auto max-w-[88rem]">
         <Reveal className="grid gap-6 md:grid-cols-12">
           <div className="md:col-span-4">
@@ -11,14 +14,14 @@ export function Timeline() {
               03
             </span>
             <h2 data-reveal className="label mt-4">
-              Experiencia
+              {sections.experience}
             </h2>
           </div>
           <p
             data-split
             className="display text-[1.75rem] font-medium leading-[1.15] tracking-tight md:col-span-7 md:col-start-6 md:text-[2.1rem]"
           >
-            Consultoría, telecomunicaciones, producto y proyectos independientes. Seis años, del más reciente al más antiguo.
+            {experienceIntro}
           </p>
         </Reveal>
 
@@ -32,9 +35,7 @@ export function Timeline() {
               <div data-reveal className="md:col-span-3">
                 <p className="display text-[1.5rem] font-medium tabular-nums tracking-tight md:text-[1.75rem]">
                   {job.start}
-                  {job.start !== job.end ? (
-                    <span className="text-faint"> – {job.end === "Presente" ? "hoy" : job.end}</span>
-                  ) : null}
+                  {job.end !== job.start ? <span className="text-faint"> – {job.end ?? present}</span> : null}
                 </p>
                 {job.mode ? <p className="label mt-1 text-faint">{job.mode}</p> : null}
               </div>
@@ -62,7 +63,7 @@ export function Timeline() {
 
         <Reveal className="mt-14 grid gap-y-3 md:grid-cols-12 md:gap-x-8">
           <p data-reveal className="label md:col-span-3">
-            Formación
+            {sections.education}
           </p>
           <div data-reveal className="md:col-span-9">
             <p className="display text-[1.25rem] font-medium tracking-tight">{education.degree}</p>

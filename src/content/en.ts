@@ -1,0 +1,135 @@
+import { llmCosts, shared } from "./shared";
+import type { Content } from "./types";
+
+export const en: Content = {
+  lang: "en",
+  otherLang: { lang: "es", label: "ES", href: "/es", aria: "Cambiar a español" },
+  meta: {
+    title: `${shared.name} · Full Stack Developer`,
+    description:
+      "Full Stack Developer in Mendoza, Argentina. Six years of software development; language models integrated into production systems.",
+    ogLocale: "en_US",
+  },
+  role: "Full Stack Developer",
+  heroLine: "I integrate language models into production systems.",
+  tagline:
+    "Six years of software development: Java and Node.js backends, React and Next.js interfaces, AWS and GCP infrastructure. Over the last two, LLMs applied to products in use: voice agents, document classification and model evaluation.",
+  intro: [
+    "Degree in Computer Science and Software Development from Universidad del Aconcagua. I have worked at consultancies, a telecommunications company, a product company and on independent projects, with teams of varying size and technical maturity. That path covers the full life cycle of a system: API design, data modelling, interface, deployment and operations.",
+    "My current focus is the integration of language models into production software: agent orchestration, classification and extraction pipelines, and systematic model evaluation. I hold these components to the same standards as any other: they must be measurable, secure and maintainable.",
+  ],
+  nav: [
+    { href: "#about", label: "About" },
+    { href: "#tools", label: "Tools" },
+    { href: "#experience", label: "Experience" },
+    { href: "#contact", label: "Contact" },
+  ],
+  sections: { about: "About", tools: "Tools", experience: "Experience", education: "Education", contact: "Contact" },
+  toolsIntro: "Open-source tools with a narrow scope. Each one has its own repository, runs in the browser and can be cloned.",
+  tools: [
+    {
+      ...llmCosts,
+      stack: [...llmCosts.stack],
+      tagline: "Cost per call, per model.",
+      description:
+        "Calculates the cost of a prompt per call, per day and per month, from a text or a token count, for the selected models. Prices update from OpenRouter's public catalogue over a snapshot verified against each provider. Runs entirely in the browser: no keys, no accounts, no tracking.",
+      data: "Live prices, weekly snapshot",
+    },
+  ],
+  toolLabels: { live: "Published", soon: "In development", open: "Open", repo: "Repository", stack: "Stack", license: "License", data: "Data" },
+  experienceIntro: "Consultancy, telecommunications, product and independent projects. Six years, most recent first.",
+  experience: [
+    {
+      company: "micro1",
+      role: "AI Training Expert",
+      start: "2026",
+      end: null,
+      mode: "Remote · contractor",
+      summary: "Model response evaluation, technical reasoning review and domain expertise for AI training pipelines.",
+      stack: ["Model evaluation", "Software engineering"],
+    },
+    {
+      company: "Alignerr",
+      role: "Data Annotator · Software Engineer",
+      start: "2026",
+      end: "2026",
+      mode: "Remote · contractor",
+      summary: "Evaluation of language models on programming tasks: reference solutions, test cases and grading rubrics.",
+      stack: ["Java", "TypeScript", "Python"],
+    },
+    {
+      company: "Lazo",
+      role: "Software Developer",
+      start: "2025",
+      end: "2026",
+      mode: "Remote",
+      summary: "Product team. Backend services in Java and Spring Boot; internal tools in Next.js.",
+      highlights: [
+        "Gemini in production: conversational assistants, automatic document classification and instruction generation for tax forms, on Java services with Spring Boot.",
+        "Internal tools in Next.js and React, with MySQL and AWS deployments.",
+      ],
+      stack: ["Java", "Spring Boot", "Next.js", "MySQL", "AWS"],
+    },
+    {
+      company: "Mirlo Telecom",
+      role: "Software Developer",
+      start: "2024",
+      end: "2025",
+      mode: "Hybrid",
+      summary: "Telecommunications company. NestJS microservices with hexagonal architecture, on PostgreSQL and AWS.",
+      highlights: [
+        "Voice agents with OpenAI for handling and placing calls in real time, including conversation orchestration and the automation of the associated flows.",
+        "SMS, WhatsApp and email messaging, internal CRM, and catalogue and commercial offer management.",
+      ],
+      stack: ["NestJS", "PostgreSQL", "AWS", "OpenAI"],
+    },
+    {
+      company: "Freelance",
+      role: "NestJS, Next.js and React Developer",
+      start: "2024",
+      end: "2024",
+      mode: "Remote",
+      summary: "Web applications and REST APIs for clients. User authentication and persistence in PostgreSQL, MongoDB and Firebase.",
+      stack: ["Next.js", "NestJS", "Tailwind", "MongoDB"],
+    },
+    {
+      company: "Globant",
+      role: "Java Developer",
+      start: "2021",
+      end: "2023",
+      mode: "Remote",
+      summary: "Microservice-based APIs in Java, non-relational databases, unit testing with JUnit and Mockito, and Google Cloud services.",
+      stack: ["Java", "Microservices", "GCP", "JUnit"],
+    },
+    {
+      company: "Fixxin Consultoría & Soluciones",
+      role: "Frontend Developer",
+      start: "2020",
+      end: "2021",
+      mode: "Remote",
+      summary: "Mobile applications in Ionic for telecommunications work orders and time tracking, and a web platform for short-term rentals in Angular.",
+      stack: ["Ionic", "Angular", "MySQL", "PostgreSQL"],
+    },
+  ],
+  present: "present",
+  education: {
+    institution: "Universidad del Aconcagua",
+    degree: "Licenciatura (five-year degree) in Computer Science and Software Development",
+    location: "Mendoza, Argentina",
+    start: "2019",
+    end: "2024",
+  },
+  now: {
+    title: "Currently",
+    items: [
+      "AI model evaluation and training, as a contractor.",
+      "Designing systems with LLMs in production: agents, evaluation and cost control.",
+      "Open to roles in product teams.",
+    ],
+  },
+  contactHeadline: "Let's talk.",
+  copy: { idle: "Copy", done: "Copied ✓" },
+  theme: { label: "Theme", dark: "Dark", light: "Light", toLight: "Switch to light theme", toDark: "Switch to dark theme" },
+  localTimeAria: "Local time",
+  timeLocale: "en-GB",
+};

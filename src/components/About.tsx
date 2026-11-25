@@ -1,12 +1,14 @@
 "use client";
 
 import { useRef } from "react";
-import { photo, site } from "@/content/site";
+import { shared } from "@/content";
 import { gsap, useGSAP } from "@/lib/gsap";
+import { useContent } from "./LangProvider";
 import { Reveal } from "./Reveal";
 
 export function About() {
   const photoRef = useRef<HTMLDivElement>(null);
+  const c = useContent();
 
   useGSAP(
     () => {
@@ -35,7 +37,7 @@ export function About() {
   return (
     <Reveal
       as="section"
-      id="sobre-mi"
+      id="about"
       data-scene="about"
       className="relative px-5 py-24 sm:px-8 md:py-40"
     >
@@ -45,7 +47,7 @@ export function About() {
             01
           </span>
           <h2 data-reveal className="label mt-4">
-            Sobre mí
+            {c.sections.about}
           </h2>
         </div>
 
@@ -53,7 +55,7 @@ export function About() {
           <div className="w-full max-w-[15rem] overflow-hidden rounded-2xl md:max-w-[17rem]">
             <div ref={photoRef} className="photo aspect-square w-full" style={{ clipPath: "inset(0 0 0 0)" }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={photo.src} alt={photo.alt} decoding="async" style={{ transform: "scale(1.08)" }} />
+              <img src={shared.photo.src} alt={shared.name} decoding="async" style={{ transform: "scale(1.08)" }} />
             </div>
           </div>
         </div>
@@ -63,10 +65,10 @@ export function About() {
             data-split
             className="display text-[1.75rem] font-medium leading-[1.15] tracking-tight md:text-[2.1rem]"
           >
-            {site.heroLine}
+            {c.heroLine}
           </p>
           <div className="mt-8 space-y-5 text-[1.0625rem] leading-[1.65] text-muted">
-            {site.intro.map((p) => (
+            {c.intro.map((p) => (
               <p key={p} data-reveal>
                 {p}
               </p>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
+import { useContent } from "./LangProvider";
 
 type Theme = "light" | "dark";
 
@@ -15,6 +16,7 @@ const getServerSnapshot = (): Theme | null => null;
 
 export function ThemeToggle() {
   const theme = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+  const { theme: t } = useContent();
 
   function toggle() {
     const next: Theme = theme === "dark" ? "light" : "dark";
@@ -33,7 +35,7 @@ export function ThemeToggle() {
     <button
       type="button"
       onClick={toggle}
-      aria-label={isDark ? "Cambiar a tema claro" : "Cambiar a tema oscuro"}
+      aria-label={isDark ? t.toLight : t.toDark}
       aria-pressed={isDark}
       className="label flex cursor-pointer items-center gap-2 rounded-full border border-rule px-3 py-1.5 transition-colors hover:border-accent hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
     >
@@ -42,7 +44,7 @@ export function ThemeToggle() {
         className="block size-2 rounded-full bg-accent transition-transform duration-500"
         style={{ transform: isDark ? "scale(1)" : "scale(0.55)" }}
       />
-      <span className="hidden sm:inline">{theme === null ? "Tema" : isDark ? "Oscuro" : "Claro"}</span>
+      <span className="hidden sm:inline">{theme === null ? t.label : isDark ? t.dark : t.light}</span>
     </button>
   );
 }
