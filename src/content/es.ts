@@ -20,23 +20,16 @@ export const es: Content = {
   ],
   nav: [
     { href: "#about", label: "Sobre mí" },
-    { href: "#tools", label: "Herramientas" },
     { href: "#experience", label: "Experiencia" },
     { href: "#contact", label: "Contacto" },
   ],
-  sections: { about: "Sobre mí", tools: "Herramientas", experience: "Experiencia", education: "Formación", contact: "Contacto" },
-  toolsIntro: "Herramientas de código abierto y alcance acotado. Cada una tiene su propio repositorio, se ejecuta en el navegador y puede clonarse.",
-  tools: [
-    {
-      ...llmCosts,
-      stack: [...llmCosts.stack],
-      tagline: "Costo por llamada, por modelo.",
-      description:
-        "Calcula el costo por llamada, por día y por mes de un prompt, a partir de un texto o de una cantidad de tokens, para los modelos seleccionados. Los precios se actualizan desde el catálogo público de OpenRouter sobre un snapshot verificado contra cada proveedor. Se ejecuta íntegramente en el navegador: sin claves, sin cuentas y sin seguimiento.",
-      data: "Precios en vivo, snapshot semanal",
-    },
-  ],
-  toolLabels: { live: "Publicada", soon: "En desarrollo", open: "Abrir", repo: "Repositorio", stack: "Stack", license: "Licencia", data: "Datos" },
+  sections: { about: "Sobre mí", experience: "Experiencia", education: "Formación", contact: "Contacto" },
+  aside: {
+    label: "Herramienta abierta",
+    name: llmCosts.name,
+    text: "Calcula lo que cuesta un prompt por llamada, por día y por mes según el modelo. Corre en el navegador, sin claves.",
+    href: llmCosts.url,
+  },
   experienceIntro: "Consultoría, telecomunicaciones, producto y proyectos independientes. Seis años, del más reciente al más antiguo.",
   experience: [
     {

@@ -20,23 +20,16 @@ export const en: Content = {
   ],
   nav: [
     { href: "#about", label: "About" },
-    { href: "#tools", label: "Tools" },
     { href: "#experience", label: "Experience" },
     { href: "#contact", label: "Contact" },
   ],
-  sections: { about: "About", tools: "Tools", experience: "Experience", education: "Education", contact: "Contact" },
-  toolsIntro: "Open-source tools with a narrow scope. Each one has its own repository, runs in the browser and can be cloned.",
-  tools: [
-    {
-      ...llmCosts,
-      stack: [...llmCosts.stack],
-      tagline: "Cost per call, per model.",
-      description:
-        "Calculates the cost of a prompt per call, per day and per month, from a text or a token count, for the selected models. Prices update from OpenRouter's public catalogue over a snapshot verified against each provider. Runs entirely in the browser: no keys, no accounts, no tracking.",
-      data: "Live prices, weekly snapshot",
-    },
-  ],
-  toolLabels: { live: "Published", soon: "In development", open: "Open", repo: "Repository", stack: "Stack", license: "License", data: "Data" },
+  sections: { about: "About", experience: "Experience", education: "Education", contact: "Contact" },
+  aside: {
+    label: "Open-source tool",
+    name: llmCosts.name,
+    text: "Calculates what a prompt costs per call, per day and per month across models. Runs in the browser, no keys.",
+    href: llmCosts.url,
+  },
   experienceIntro: "Consultancy, telecommunications, product and independent projects. Six years, most recent first.",
   experience: [
     {

@@ -13,7 +13,7 @@ export function Contact() {
         <Reveal className="grid gap-10 md:grid-cols-12">
           <div className="md:col-span-4">
             <span className="big-num block" aria-hidden>
-              04
+              03
             </span>
             <h2 data-reveal className="label mt-4">
               {sections.contact}

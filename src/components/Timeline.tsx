@@ -11,7 +11,7 @@ export function Timeline() {
         <Reveal className="grid gap-6 md:grid-cols-12">
           <div className="md:col-span-4">
             <span className="big-num block" aria-hidden>
-              03
+              02
             </span>
             <h2 data-reveal className="label mt-4">
               {sections.experience}

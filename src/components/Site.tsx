@@ -6,7 +6,6 @@ import { Hero } from "./Hero";
 import { LangProvider } from "./LangProvider";
 import { Timeline } from "./Timeline";
 import { TopBar } from "./TopBar";
-import { Tools } from "./Tools";
 
 /** La página completa en un idioma. `/` la renderiza en inglés y `/es` en español. */
 export function Site({ lang }: { lang: Lang }) {
@@ -16,7 +15,6 @@ export function Site({ lang }: { lang: Lang }) {
       <main className="relative">
         <Hero />
         <About />
-        <Tools />
         <Timeline />
         <Contact />
       </main>

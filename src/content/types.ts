@@ -1,18 +1,5 @@
 export type Lang = "en" | "es";
 
-export type Tool = {
-  name: string;
-  tagline: string;
-  description: string;
-  stack: string[];
-  year: string;
-  url: string;
-  repo: string;
-  status: "live" | "soon";
-  /** Texto de la celda "Datos / Data". */
-  data: string;
-};
-
 export type Experience = {
   company: string;
   role: string;
@@ -44,10 +31,9 @@ export type Content = {
   tagline: string;
   intro: string[];
   nav: { href: string; label: string }[];
-  sections: { about: string; tools: string; experience: string; education: string; contact: string };
-  toolsIntro: string;
-  tools: Tool[];
-  toolLabels: { live: string; soon: string; open: string; repo: string; stack: string; license: string; data: string };
+  sections: { about: string; experience: string; education: string; contact: string };
+  /** Mención breve de la herramienta abierta, al final de "Sobre mí". */
+  aside: { label: string; name: string; text: string; href: string };
   experienceIntro: string;
   experience: Experience[];
   present: string;

@@ -92,6 +92,13 @@ export function About() {
               </p>
             ))}
           </div>
+          <p data-reveal className="mt-10 border-t border-rule pt-5 text-[0.9375rem] leading-relaxed text-muted">
+            <span className="label block">{c.aside.label}</span>
+            <a href={c.aside.href} target="_blank" rel="noreferrer" className="link mt-1.5 inline-block font-medium text-fg">
+              {c.aside.name}
+            </a>{" "}
+            <span>{c.aside.text}</span>
+          </p>
         </div>
       </div>
     </Reveal>
